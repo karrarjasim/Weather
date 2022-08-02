@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 response.body?.string()?.let { jsonString ->
                     val result = Gson().fromJson(jsonString, WeatherResponse::class.java)
-                    Log.v(TAG, result.toString())
                     runOnUiThread {
                         binding.apply {
                             greeting.text = helper.greet()

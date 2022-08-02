@@ -26,24 +26,24 @@
 
     <TextView
         android:id="@+id/city_name"
+        style="@style/normal_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nasiriyah"
-        style="@style/normal_text"
+        android:text="@string/city_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/top_guideline" />
 
     <TextView
         android:id="@+id/day"
+        style="@style/body_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Monday"
-        style="@style/body_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city_name" />
+        app:layout_constraintTop_toBottomOf="@+id/city_name"
+        tools:text="Monday" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -59,25 +59,25 @@
 
     <TextView
         android:id="@+id/temperature"
+        style="@style/normal_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="20° C"
-        style="@style/normal_text"
         app:layout_constraintBottom_toTopOf="@+id/greeting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="20° C" />
 
     <TextView
         android:id="@+id/greeting"
+        style="@style/body_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GOOD MORNING"
-        style="@style/body_text"
         app:layout_constraintBottom_toTopOf="@+id/bottom_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="GOOD MORNING" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_guideline"
@@ -90,9 +90,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginStart="20dp"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottom_guideline">
@@ -109,17 +109,18 @@
 
         <TextView
             android:id="@+id/feels"
+            style="@style/bold_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/bold_text"
-            android:text="7:00" />
+            tools:text="30" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
@@ -138,19 +139,19 @@
 
         <TextView
             android:id="@+id/wind"
+            style="@style/bold_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/bold_text"
-            android:text="7:00" />
+            tools:text="1.4" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginEnd="20dp"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottom_guideline"
@@ -169,10 +170,30 @@
 
         <TextView
             android:id="@+id/humidity"
+            style="@style/bold_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/bold_text"
-            android:text="7:00" />
+            tools:text="30" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
